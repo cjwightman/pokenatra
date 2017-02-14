@@ -1,0 +1,9 @@
+<h2><a href="/pokemon">All Pokomon</a></h2>
+<div class="pokemon">
+  <p>Pokemon Name: <%= @pokemon.name %></p>
+  <p>Pokemon CP: <%= @pokemon.cp %></p>
+  <p>Pokemon Poketype: <%= @pokemon.poke_type %></p>
+  <img src= ' <%= @pokemon.img_url %> '>
+</div>
+
+<a href='/pokemon/<%= @pokemon.id %>/edit'>Edit This Pokemon</a>
