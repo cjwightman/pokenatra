@@ -10,7 +10,7 @@ require_relative 'db/connection.rb'
 # require_relative 'controllers/trainer.rb'
 
 require_relative 'models/pokemon'
-require_relative 'models/trainer'
+# require_relative 'models/trainer'
 
 get "/" do
   erb :home
@@ -46,13 +46,18 @@ put '/pokemon/:id' do
   redirect("/pokemon/#{@pokemon.id}")
 end
 
+get "/pokemon/:id/delete" do
+  @pokemon = Pokemon.find(params[:id])
+  erb(:"pokemon/delete")
+end
+
 delete '/pokemon/:id' do
   @pokemon = Pokemon.find(params[:id])
   @pokemon.destroy
   redirect("/pokemon")
 end
 
-get "/trainer" do
-  @trainer = Trainer.all
-  erb :"trainer/index"
-end
+# get "/trainer" do
+#   @trainer = Trainer.all
+#   erb :"trainer/index"
+# end
