@@ -3,8 +3,8 @@ ActiveRecord::Base.establish_connection(
   :database => "pokemon_db"
 )
 
-# if defined? Sinatra
-# 	after do
-# 	  ActiveRecord::Base.connection.close
-# 	end
-# end
+if defined? Sinatra
+	after do
+	  ActiveRecord::Base.connection.close
+	end
+end
